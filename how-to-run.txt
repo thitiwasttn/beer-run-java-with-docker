@@ -1,0 +1,4 @@
+// build
+docker build . -t app-test-image
+
+docker run --name app-test -p 8080:8080  -v /Users/thitiwasnupan/development/beer_demo/logs:/usr/src/app/logs -d -it app-test-image
