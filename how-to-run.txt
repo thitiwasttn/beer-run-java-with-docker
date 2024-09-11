@@ -1,4 +1,11 @@
 // build
 docker build . -t app-test-image
 
+// run
 docker run --name app-test -p 8080:8080  -v /Users/thitiwasnupan/development/beer_demo/logs:/usr/src/app/logs -d -it app-test-image
+
+// stop
+docker stop app-test
+
+// remove container
+docker rm app-test
