@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
     @GetMapping("/example")
-    public ResponseEntity<String> test(@RequestParam("data") String data) {
+    public ResponseEntity<String> test(@RequestParam(name = "data", required = false ) String data) {
         log.debug("test::data:: {}", data);
-        return ResponseEntity.ok("Your input " + data);
+        return ResponseEntity.ok("Your input " + (data == null ? "" : data));
     }
 }
